@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "application.jwt",
+      "type": "com.Alish.midka.jwt.JwtConfig",
+      "sourceType": "com.Alish.midka.jwt.JwtConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "application.jwt.token-expiration-after-days",
+      "type": "java.lang.Integer",
+      "sourceType": "com.Alish.midka.jwt.JwtConfig"
+    },
+    {
+      "name": "application.jwt.token-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.Alish.midka.jwt.JwtConfig"
+    }
+  ],
+  "hints": []
+}
