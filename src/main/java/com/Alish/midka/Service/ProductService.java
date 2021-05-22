@@ -30,7 +30,7 @@ public class ProductService {
         newProduct.setName(product.getName());
         newProduct.setDescription(product.getDescription());
         newProduct.setPrice(product.getPrice());
-
+        newProduct.setCategoryId(product.getCategoryId());
 
         productRepository.saveAndFlush(newProduct);
 
@@ -43,6 +43,7 @@ public class ProductService {
             productDb.setName(product.getName());
             productDb.setDescription(product.getDescription());
             productDb.setPrice(product.getPrice());
+            productDb.setCategoryId(product.getCategoryId());
             productRepository.saveAndFlush(productDb);
         }
     }

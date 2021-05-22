@@ -1,6 +1,9 @@
 package com.Alish.midka.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,11 +40,19 @@ public class User implements UserDetails {
 
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonManagedReference(value = "user-order")
     private List<Order> orderList;
 
 
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+    @JsonManagedReference(value = "user-address")
     private Address address;
+
+
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Feedback> feedBacks;
 
 
     @Override

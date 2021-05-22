@@ -1,0 +1,1 @@
+INSERT INTO address(building_no, street, user_id) VALUES ('30', 'Abaya', 1);

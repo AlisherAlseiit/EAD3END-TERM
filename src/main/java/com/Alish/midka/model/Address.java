@@ -1,5 +1,7 @@
 package com.Alish.midka.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,10 +22,12 @@ public class Address {
 
 
     @Column(name = "user_id")
+    @JsonIgnore
     private Long userId;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    @JsonBackReference(value = "user-address")
     private User user;
 
 }
